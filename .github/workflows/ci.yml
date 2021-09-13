@@ -1,0 +1,30 @@
+name: runTestsAndLinters
+on: [push, pull_request]
+
+jobs:
+  test:
+    strategy:
+      matrix:
+        go: [ 1.17, 1.16 ]
+    name: Tests Go ${{ matrix.go }}
+    runs-on: ubuntu-18.04
+
+    steps:
+      - name: Install Go
+        uses: actions/setup-go@v2
+        with:
+          go-version: ${{ matrix.go }}
+      - name: Checkout code
+        uses: actions/checkout@v1
+      - name: Run tests
+        run: go test ./...
+
+  golangci:
+    name: golangci
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: golangci-lint
+        uses: golangci/golangci-lint-action@v2
+        with:
+          version: latest
