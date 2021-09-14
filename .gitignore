@@ -1,1 +1,4 @@
 /.idea/
+candles*.csv
+vendor
+.DS_Store
