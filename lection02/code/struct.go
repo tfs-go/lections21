@@ -1,3 +1,4 @@
+//nolint: unused
 package main
 
 import (
@@ -53,6 +54,7 @@ func compare() {
 	c2.name = "AMZN"
 	fmt.Println(c1 == c2)
 
+	//nolint: gocritic,staticcheck
 	fmt.Println(Candle{} == Candle{})
 
 	/*
@@ -78,6 +80,8 @@ func sizeOf() {
 func methods() {
 	// конструктор не нужен
 	_ = sync.Mutex{}
+
+	_ = new(sync.Mutex)
 
 	// не элегантно; непонятно, какие поля обязательные для коректной работы
 	e := exchange.Exchange{
