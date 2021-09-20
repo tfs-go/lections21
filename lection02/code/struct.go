@@ -84,12 +84,12 @@ func methods() {
 	_ = new(sync.Mutex)
 
 	// не элегантно; непонятно, какие поля обязательные для коректной работы
-	e := exchange.Exchange{
+	_ = exchange.Exchange{
 		Name: "MOEX",
 	}
 
 	// удобно и красиво
-	e, _ = exchange.New("MOEX", time.Now(), time.Now().Add(time.Hour))
+	e, _ := exchange.New("MOEX", time.Now(), time.Now().Add(time.Hour))
 
 	fmt.Println(e.Duration())
 

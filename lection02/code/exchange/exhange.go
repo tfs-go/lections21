@@ -43,6 +43,7 @@ func (e *Exchange) UpdateEndTime(t time.Time) {
 	e.duration = e.EndTime.Sub(e.StartTime)
 }
 
+//nolint: staticcheck
 func (e Exchange) UpdateEndTimeValue(t time.Time) {
 	e.EndTime = t
 	e.duration = e.EndTime.Sub(e.StartTime)
