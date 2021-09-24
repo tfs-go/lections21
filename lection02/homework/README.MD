@@ -38,13 +38,21 @@
         "company":"hoofs",
         "valid_operations_count":123, (int)
         "balance": -25, (int)
-        "invalid_operations": ["abc", 3, "cdr"]
+        "invalid_operations": [
+            "abc",
+             3,
+             "cdr"
+        ]
     },
     {
         "company":"horns",
         "valid_operations_count":123, (int)
         "balance": -25, (int)
-        "invalid_operations": ["abc", 3, "cdr"]
+        "invalid_operations": [
+            "abc",
+             3,
+             "cdr"
+        ]
     }
 ]
 ```
