@@ -1,4 +1,5 @@
 /.idea/
 candles*.csv
 vendor
+postgres
 .DS_Store
