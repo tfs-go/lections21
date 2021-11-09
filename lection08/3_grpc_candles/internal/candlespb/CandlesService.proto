@@ -1,0 +1,29 @@
+syntax = "proto3";
+package candles;
+option go_package = "3_grpc_candles/candlespb";
+import "google/protobuf/timestamp.proto";
+
+enum Period {
+  PERIOD_1M = 0;
+  PERIOD_2M = 1;
+  PERIOD_10M = 2;
+}
+
+message CandleResponse {
+  string instrument = 1;
+  google.protobuf.Timestamp ts = 2;
+  Period period = 3;
+  double open = 4;
+  double high = 5;
+  double low = 6;
+  double close = 7;
+}
+
+message CandleRequest {
+  string instrument = 1;
+  Period period = 2;
+}
+
+service CandlesService {
+  rpc Candles(CandleRequest) returns(stream CandleResponse) {};
+}
