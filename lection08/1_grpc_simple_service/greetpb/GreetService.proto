@@ -1,0 +1,7 @@
+syntax = "proto3";
+package greet;
+option go_package = "1_grpc_simple_service/candlespb";
+
+service GreetService {
+
+}
