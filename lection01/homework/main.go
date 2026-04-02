@@ -1,7 +1,11 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+
+	"github.com/tfs-go/lections21/lection01/homework/figure"
+)
 
 func main() {
-	fmt.Println("\033[31mHello \033[0mWorld") // https://www.shellhacks.com/bash-colors/
+	fmt.Println(figure.Construct(figure.SandglassFiller, figure.CharModifier("!", 34), figure.SizeModifier(15)))
 }
